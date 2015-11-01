@@ -27,7 +27,15 @@ let Binomial x n p =
 
     let NextK k = if k > m then k + 1 else k - 1
 
-    
+    let rec Calculate k totalUnscaledProbability previous unscaled = 
+        let current = CalcCurrent previous k
+        let totalUnscaledProbability' = totalUnscaledProbability + current
+        let unscaled' = CalcUnscaled x k unscaled current
+
+        if Done current then
+            unscaled', totalUnscaledProbability'
+        else 
+            Calculate (NextK k) totalUnscaledProbability' current unscaled'
 
     let mutable previousValue = 1.
     let mutable isDone = false
