@@ -1,0 +1,16 @@
+Cumulative distibution is a formula that seems straightforward to code
+
+But straightforward algorithm is impractical
+	- huge inetermediate factorial values
+	- "fail fast" approach
+
+Creating custom operators
+	- should be used with care and restraint
+
+Aliasing functions locally
+	- greater conciseness
+
+NUnit and FsUnit 
+	- tests 
+	- equalWithin
+	- test cases generation in Excel and pasting into the code
