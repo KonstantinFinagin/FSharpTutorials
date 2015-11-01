@@ -2,16 +2,9 @@
 
 let Binomial x n p = 
     let f = float
-    let mutable totalUnscaledP = 0.
-    let mutable unscaledResult = 0.
     let essentialyZero = 10.E-12
 
     let m = (f(n) * p) |> truncate |> int
-
-    totalUnscaledP <- totalUnscaledP + 1.
-
-    if m = x then unscaledResult <- unscaledResult + 1.
-
 
     let CalcCurrent value k = 
         if k > m then 
@@ -37,31 +30,14 @@ let Binomial x n p =
         else 
             Calculate (NextK k) totalUnscaledProbability' current unscaled'
 
-    let mutable previousValue = 1.
-    let mutable isDone = false
-    let mutable k = m + 1
+    let InitialUnscaled = if (m <= x) then 1.0 else 0.0
 
-    while not isDone && k <= n do
-        let currentValue = CalcCurrent previousValue k
-        totalUnscaledP <- totalUnscaledP + currentValue        
-        unscaledResult <- CalcUnscaled x k unscaledResult currentValue
-        isDone <- Done currentValue
-        previousValue <- currentValue
-        k <- NextK k
+    let UnscaledResultAboveM, TotalUnscaledProbabilityAboveM = 
+        Calculate(m+1) 1.0 1.0 InitialUnscaled
+    let UnscaledResult, TotalUnscaledProbability =
+        Calculate(m-1) TotalUnscaledProbabilityAboveM 1.0 UnscaledResultAboveM
 
-    previousValue <- 1.
-    isDone <- false
-    k <- m - 1
-
-    while not isDone && k >= 0 do
-        let currentValue = CalcCurrent previousValue k
-        totalUnscaledP <- totalUnscaledP + currentValue
-        unscaledResult <- CalcUnscaled x k unscaledResult currentValue
-        isDone <- Done currentValue
-        previousValue <- currentValue
-        k <- NextK k
-
-    unscaledResult / totalUnscaledP
+    UnscaledResult / TotalUnscaledProbability
 
 
 
