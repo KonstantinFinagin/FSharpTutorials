@@ -6,8 +6,15 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BinomialDistribution.Tests", "BinomialDistribution.Tests\BinomialDistribution.Tests.fsproj", "{F665CC81-0B37-4DF6-8D13-9665D5887B3F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter02", "Chapter02", "{91C36268-EE4C-4F44-9BAD-589F73AB0E24}"
+	ProjectSection(SolutionItems) = preProject
+		chapter02notes.txt = chapter02notes.txt
+	EndProjectSection
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BinomialDistribution.Console", "BinomialDistribution.Console\BinomialDistribution.Console.fsproj", "{3AB323C5-F7A4-4DC5-B9EC-8051934D1E21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter03", "Chapter03", "{3EA8AD1E-EC58-44B8-AD13-65DBD9C4A4C8}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Markdown.Console", "Markdown.Console\Markdown.Console.fsproj", "{4F6F83AC-0364-47A1-B787-E1C853793B34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +30,10 @@ Global
 		{3AB323C5-F7A4-4DC5-B9EC-8051934D1E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AB323C5-F7A4-4DC5-B9EC-8051934D1E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AB323C5-F7A4-4DC5-B9EC-8051934D1E21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F6F83AC-0364-47A1-B787-E1C853793B34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F6F83AC-0364-47A1-B787-E1C853793B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F6F83AC-0364-47A1-B787-E1C853793B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F6F83AC-0364-47A1-B787-E1C853793B34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,5 +41,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F665CC81-0B37-4DF6-8D13-9665D5887B3F} = {91C36268-EE4C-4F44-9BAD-589F73AB0E24}
 		{3AB323C5-F7A4-4DC5-B9EC-8051934D1E21} = {91C36268-EE4C-4F44-9BAD-589F73AB0E24}
+		{4F6F83AC-0364-47A1-B787-E1C853793B34} = {3EA8AD1E-EC58-44B8-AD13-65DBD9C4A4C8}
 	EndGlobalSection
 EndGlobal
