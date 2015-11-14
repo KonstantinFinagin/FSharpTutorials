@@ -15,3 +15,4 @@ and MarkdownSpan =
     | Strong of MarkdownSpans
     | Emphasis of MarkdownSpans
     | Hyperlink of MarkdownSpans * string
+    | HardLineBreak
