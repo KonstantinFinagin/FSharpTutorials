@@ -49,6 +49,18 @@ let rec parseSpans acc chars = seq {
             yield acc |> List.rev |> toString |> Literal }
 
     match chars with 
+    | StartsWith [' ';' ';'\r';'\n'] chars ->
+        yield! emitLiteral
+        yield HardLineBreak
+        yield! parseSpans [] chars
+    | StartsWith [' ';' ';'\r'] chars ->
+        yield! emitLiteral
+        yield HardLineBreak
+        yield! parseSpans [] chars
+    | StartsWith [' ';' ';'\n'] chars ->
+        yield! emitLiteral
+        yield HardLineBreak
+        yield! parseSpans [] chars
     | Delimited ['`'] (body, chars) ->
         yield! emitLiteral
         yield InlineCode(toString body)
