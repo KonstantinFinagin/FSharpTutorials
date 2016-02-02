@@ -24,7 +24,6 @@ let (|StartsWith|_|) prefix input =
         | [], rest ->
             Some(rest)
         | _ -> None
-
     loop (prefix, input)
 
 let rec parseBracketedBody closing acc = function
@@ -44,14 +43,19 @@ let (|Delimited|_|) delim = parseBracketed delim delim
 let (|Bracketed|_|) opening closing = parseBracketed opening closing
 
 let rec parseSpans acc chars = seq {
+    // sequence expression that emits Literal 
+    // from the accumulated input provided it's not empty
     let emitLiteral = seq {
         if acc <> [] then 
             yield acc |> List.rev |> toString |> Literal }
 
     match chars with 
     | StartsWith [' ';' ';'\r';'\n'] chars ->
+        // first emit a literal
         yield! emitLiteral
+        // emit currently recognised span
         yield HardLineBreak
+        // continue parsing recursively
         yield! parseSpans [] chars
     | StartsWith [' ';' ';'\r'] chars ->
         yield! emitLiteral
@@ -61,6 +65,7 @@ let rec parseSpans acc chars = seq {
         yield! emitLiteral
         yield HardLineBreak
         yield! parseSpans [] chars
+    // (body, chars) is a pattern that defines two symbols to hold the delimited body and remaining input
     | Delimited ['`'] (body, chars) ->
         yield! emitLiteral
         yield InlineCode(toString body)
@@ -79,19 +84,10 @@ let rec parseSpans acc chars = seq {
         yield! emitLiteral
         yield Hyperlink(parseSpans [] body |> List.ofSeq, toString url)
         yield! parseSpans [] chars
+    // take the current character, add it to a list of accumulated characters, continue with processing
     | c::chars ->
         yield! parseSpans (c::acc) chars
+    // emit the last literal
     | [] ->
         yield! emitLiteral
 }
-
-
-
-
-
-
-
-
-
-
-  
