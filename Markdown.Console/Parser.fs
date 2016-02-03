@@ -50,20 +50,14 @@ let rec parseSpans acc chars = seq {
             yield acc |> List.rev |> toString |> Literal }
 
     match chars with 
-    | StartsWith [' ';' ';'\r';'\n'] chars ->
+    | StartsWith [' ';' ';'\r';'\n'] chars 
+    | StartsWith [' ';' ';'\r'] chars 
+    | StartsWith [' ';' ';'\n'] chars ->
         // first emit a literal
         yield! emitLiteral
         // emit currently recognised span
         yield HardLineBreak
         // continue parsing recursively
-        yield! parseSpans [] chars
-    | StartsWith [' ';' ';'\r'] chars ->
-        yield! emitLiteral
-        yield HardLineBreak
-        yield! parseSpans [] chars
-    | StartsWith [' ';' ';'\n'] chars ->
-        yield! emitLiteral
-        yield HardLineBreak
         yield! parseSpans [] chars
     // (body, chars) is a pattern that defines two symbols to hold the delimited body and remaining input
     | Delimited ['`'] (body, chars) ->

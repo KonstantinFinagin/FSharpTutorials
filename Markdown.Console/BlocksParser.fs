@@ -1,5 +1,8 @@
 ﻿module BlockParser
 
+open Types
+open Parser
+
 // extending module List
 module List =    
     // walks over a list
@@ -33,3 +36,48 @@ let (|LineSeparated|) lines =
 
 let (|AsCharList|) (str:string) =
     List.ofSeq str
+
+let (|Heading'|_|) = 
+    function
+    | AsCharList(StartsWith ['#'; ' '] heading)::lines -> Some(1, heading, lines)
+    | AsCharList(StartsWith ['#'; '#'; ' '] heading)::lines -> Some(2, heading, lines)
+    | _ -> None
+     
+
+let rec parseBlocks lines = seq {
+    match lines with
+    // first-level heading
+    // :: is a standard pattern for lists used to match the first line
+    | Heading'(size, heading, lines) ->
+        yield Heading(size, parseSpans [] heading |> List.ofSeq)
+        yield! parseBlocks lines
+    | PrefixedLines "    " (body, lines) when body <> [] ->
+        yield CodeBlock(body)
+        yield! parseBlocks lines
+    // recognises paragraphs
+    | LineSeparated (body, lines) when body <> [] ->
+        // concatenate lines of the paragraph and use parseSpans to handle formatting in the paragraph
+        let body = String.concat " " body |> List.ofSeq
+        yield Paragraph(parseSpans[] body |> List.ofSeq)
+        yield! parseBlocks lines
+    // skip blank lines
+    | line::lines when System.String.IsNullOrWhiteSpace(line) ->
+        yield! parseBlocks lines
+    | _ -> ()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
