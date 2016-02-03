@@ -28,7 +28,7 @@ let rec formatSpan (output:TextWriter) =
     | InlineCode(code) ->
         output.Write("<code>" + code + "</code>")
     | HardLineBreak ->
-        output.Write("</br>")
+        output.Write("<br />")
 
 let rec formatBlock (output:TextWriter) =
     let out = outputElement output
@@ -42,22 +42,3 @@ let rec formatBlock (output:TextWriter) =
         out "pre" [] (fun () -> lines |> List.iter output.WriteLine)
     | BlockQuote(blocks) ->
         out "quote" [] (fun () -> blocks |> List.iter(formatBlock output))
-
-
-           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
