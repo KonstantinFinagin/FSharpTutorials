@@ -41,6 +41,8 @@ let (|Heading'|_|) =
     function
     | AsCharList(StartsWith ['#'; ' '] heading)::lines -> Some(1, heading, lines)
     | AsCharList(StartsWith ['#'; '#'; ' '] heading)::lines -> Some(2, heading, lines)
+    | heading::AsCharList(StartsWith ['=';'=';'='] _)::lines -> Some(1, heading |> List.ofSeq, lines)
+    | heading::AsCharList(StartsWith ['-';'-';'-'] _)::lines -> Some(2, heading |> List.ofSeq, lines)
     | _ -> None
      
 
@@ -60,6 +62,13 @@ let rec parseBlocks lines = seq {
         let body = String.concat " " body |> List.ofSeq
         yield Paragraph(parseSpans[] body |> List.ofSeq)
         yield! parseBlocks lines
+    // line-by-line quotation
+    | PrefixedLines ">" (body, lines) when body<> [] ->
+        let body = body |> List.map(fun s -> s.Substring(1))
+        yield BlockQuote(parseBlocks body |> List.ofSeq)
+        yield! parseBlocks lines
+    // multiline quotations todo
+    
     // skip blank lines
     | line::lines when System.String.IsNullOrWhiteSpace(line) ->
         yield! parseBlocks lines

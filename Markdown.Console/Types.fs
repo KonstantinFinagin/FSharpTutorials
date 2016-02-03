@@ -3,6 +3,7 @@
 type MarkdownDocument = list<MarkdownBlock>
 
 and MarkdownBlock =
+    | BlockQuote of list<MarkdownBlock>
     | Heading of int * MarkdownSpans
     | Paragraph of MarkdownSpans
     | CodeBlock of list<string>
