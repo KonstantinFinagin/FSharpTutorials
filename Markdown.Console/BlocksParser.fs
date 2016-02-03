@@ -1,14 +1,15 @@
 ﻿module BlockParser
 
+// extending module List
 module List =    
     // walks over a list
-    let partitionWhile f =
-        let rec loop acc = function
+    let partitionWhile predicate =
+        let rec loop accumulator = function
             // taking elements that match a given predicate
             // adding result to accumulator if success match
-            | x::xs when f x -> loop (x::acc) xs
+            | firstline::restlines when predicate firstline -> loop (firstline::accumulator) restlines
             // and returning as the first element of the resulting tuple
-            | xs -> List.rev acc, xs
+            | restlines -> List.rev accumulator, restlines
         loop []
 
 // takes a list of lines 
