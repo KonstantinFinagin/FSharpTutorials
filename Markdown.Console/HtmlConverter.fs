@@ -42,3 +42,5 @@ let rec formatBlock (output:TextWriter) =
         out "pre" [] (fun () -> lines |> List.iter output.WriteLine)
     | BlockQuote(blocks) ->
         out "quote" [] (fun () -> blocks |> List.iter(formatBlock output))
+
+
