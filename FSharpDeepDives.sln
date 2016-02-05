@@ -20,6 +20,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter04", "Chapter04", "{
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Financial.Console", "Financial.Console\Financial.Console.fsproj", "{C8C06153-3C74-458A-A633-4E4846515656}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter05", "Chapter05", "{812A3440-07EF-41BB-BDC5-F4EC52862A88}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SocialNetworks.Console", "SocialNetworks.Console\SocialNetworks.Console.fsproj", "{6AE1AA10-B78B-43D2-89BF-DC5C86C228C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +46,10 @@ Global
 		{C8C06153-3C74-458A-A633-4E4846515656}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8C06153-3C74-458A-A633-4E4846515656}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8C06153-3C74-458A-A633-4E4846515656}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AE1AA10-B78B-43D2-89BF-DC5C86C228C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AE1AA10-B78B-43D2-89BF-DC5C86C228C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AE1AA10-B78B-43D2-89BF-DC5C86C228C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AE1AA10-B78B-43D2-89BF-DC5C86C228C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,5 +59,6 @@ Global
 		{3AB323C5-F7A4-4DC5-B9EC-8051934D1E21} = {91C36268-EE4C-4F44-9BAD-589F73AB0E24}
 		{4F6F83AC-0364-47A1-B787-E1C853793B34} = {3EA8AD1E-EC58-44B8-AD13-65DBD9C4A4C8}
 		{C8C06153-3C74-458A-A633-4E4846515656} = {4B869093-B196-4FC4-9FA2-5EB0E8AE7AF5}
+		{6AE1AA10-B78B-43D2-89BF-DC5C86C228C0} = {812A3440-07EF-41BB-BDC5-F4EC52862A88}
 	EndGlobalSection
 EndGlobal
