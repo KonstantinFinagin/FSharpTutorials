@@ -30,7 +30,7 @@ let main args =
     // determine maximum and minimum for the Y-axis
     let mx, mn = paths |> Array.fold (fun (mx, mn) p -> (max mx (Array.max p), min mn (Array.min p))) (Double.MinValue, Double.MaxValue)
 
-    let colors = [| Color.Green; Color.Red; Color.Blue |]
+    let colors = Array.init M (fun index -> Color.FromArgb(rnd.Next(200),rnd.Next(200),rnd.Next(200)))
     
     let path_charts = Array.map2 (plot_path T N) paths colors
 
