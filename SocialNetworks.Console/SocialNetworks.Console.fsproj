@@ -5,15 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>4f6f83ac-0364-47a1-b787-e1c853793b34</ProjectGuid>
+    <ProjectGuid>6ae1aa10-b78b-43d2-89bf-dc5c86c228c0</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Markdown.Console</RootNamespace>
-    <AssemblyName>Markdown.Console</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>SocialNetworks.Console</RootNamespace>
+    <AssemblyName>SocialNetworks.Console</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>Markdown.Console</Name>
-    <TargetFrameworkProfile />
+    <Name>SocialNetworks.Console</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\Markdown.Console.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\SocialNetworks.Console.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -35,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Release\Markdown.Console.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\SocialNetworks.Console.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
@@ -49,12 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Types.fs" />
-    <Compile Include="Parser.fs" />
-    <Compile Include="BlocksParser.fs" />
-    <Compile Include="HtmlConverter.fs" />
-    <Compile Include="Helper.fs" />
-    <Compile Include="ReferenceGeneration.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
   </ItemGroup>

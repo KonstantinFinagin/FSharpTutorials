@@ -21,7 +21,8 @@ module Matching =
     let (|BlockNode|_|) block =
         match block with
         | Heading(_, spans)
-        | Paragraph(spans) -> Some(box block, spans)
+        | Paragraph(spans) 
+            -> Some(box block, spans)
         | _ -> None
 
     let BlockNode (block:obj, spans) = 
