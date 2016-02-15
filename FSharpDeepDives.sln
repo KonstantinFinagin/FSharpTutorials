@@ -24,6 +24,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter05", "Chapter05", "{
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SocialNetworks.Console", "SocialNetworks.Console\SocialNetworks.Console.fsproj", "{6AE1AA10-B78B-43D2-89BF-DC5C86C228C0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Playground", "Playground", "{A76B7AD2-3A5A-433F-BE65-4AEB0DAC821D}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Playground.Recursion", "Playground.Recursion\Playground.Recursion.fsproj", "{DAD37AC0-6844-4E02-9A9C-78A07C44F9F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +54,10 @@ Global
 		{6AE1AA10-B78B-43D2-89BF-DC5C86C228C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AE1AA10-B78B-43D2-89BF-DC5C86C228C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AE1AA10-B78B-43D2-89BF-DC5C86C228C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAD37AC0-6844-4E02-9A9C-78A07C44F9F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAD37AC0-6844-4E02-9A9C-78A07C44F9F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAD37AC0-6844-4E02-9A9C-78A07C44F9F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAD37AC0-6844-4E02-9A9C-78A07C44F9F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +68,6 @@ Global
 		{4F6F83AC-0364-47A1-B787-E1C853793B34} = {3EA8AD1E-EC58-44B8-AD13-65DBD9C4A4C8}
 		{C8C06153-3C74-458A-A633-4E4846515656} = {4B869093-B196-4FC4-9FA2-5EB0E8AE7AF5}
 		{6AE1AA10-B78B-43D2-89BF-DC5C86C228C0} = {812A3440-07EF-41BB-BDC5-F4EC52862A88}
+		{DAD37AC0-6844-4E02-9A9C-78A07C44F9F0} = {A76B7AD2-3A5A-433F-BE65-4AEB0DAC821D}
 	EndGlobalSection
 EndGlobal
