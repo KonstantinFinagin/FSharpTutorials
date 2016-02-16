@@ -1,4 +1,7 @@
 ﻿open FSharp.Data.Toolbox.Twitter
+open System.Threading
+open FSharp.Data
+open System.IO
 
 
 [<EntryPoint>]
@@ -26,7 +29,33 @@ let main argv =
                                 |> Array.map (fun node -> node.Id, node.ScreenName)
                             yield! nodeInfo |]
 
-    
+    let isInNetwork id = idsOfInterest.Contains id
+
+    let twitterConnections (ids : int64 seq) = [|
+        for srcId in ids do
+            Thread.Sleep(60000)
+            let connections = 
+                try 
+                    twitter.Connections.FriendsIds(srcId).Ids
+                    |> Array.filter isInNetwork
+                with _ -> [||]
+            yield! connections |> Seq.map (fun tgtId -> srcId, tgtId)
+    |]
+
+    let jsonNode (userInfo : int64*string) = 
+        let id, name = userInfo
+        JsonValue.Record [|
+            "name", JsonValue.String name
+            "id", JsonValue.Number (decimal id)
+        |]
+
+    let jsonNodes = 
+        let nodes = twitterNodes |> Array.map jsonNode
+        [| "nodes", (JsonValue.Array nodes) |] 
+        |> JsonValue.Record
+
+    File.WriteAllText("fSharpOrgNodes.json", jsonNodes.ToString())
+
 
     System.Windows.Forms.Application.Run()
 
