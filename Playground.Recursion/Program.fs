@@ -1,5 +1,6 @@
 ﻿open System
 
+// sample of a tail recursion
 let map converter l = 
     let rec loop accumulator = function
         | [] -> accumulator

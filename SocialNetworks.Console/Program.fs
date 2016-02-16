@@ -26,6 +26,8 @@ let main argv =
                                 |> Array.map (fun node -> node.Id, node.ScreenName)
                             yield! nodeInfo |]
 
+    
+
     System.Windows.Forms.Application.Run()
 
     0 // return an integer exit code
