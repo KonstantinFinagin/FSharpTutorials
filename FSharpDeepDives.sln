@@ -30,6 +30,12 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Playground.Recursion", "Pla
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Playground.FunctionalReactive", "Playground.FunctionalReactive\Playground.FunctionalReactive.fsproj", "{5ECA8C86-DD62-4C7B-A938-937DB0CD5486}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter07", "Chapter07", "{85CD22AA-693E-427C-8204-A0395BD8D7CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter06", "Chapter06", "{0088B3A3-E7E3-442F-A5B3-0A9C8E4EAC44}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SocialNetworks.Analysis", "SocialNetworks.Analysis\SocialNetworks.Analysis.fsproj", "{8C723C9E-FD7C-45FC-A9B8-8F2E80D2B02B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +70,10 @@ Global
 		{5ECA8C86-DD62-4C7B-A938-937DB0CD5486}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ECA8C86-DD62-4C7B-A938-937DB0CD5486}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ECA8C86-DD62-4C7B-A938-937DB0CD5486}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C723C9E-FD7C-45FC-A9B8-8F2E80D2B02B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C723C9E-FD7C-45FC-A9B8-8F2E80D2B02B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C723C9E-FD7C-45FC-A9B8-8F2E80D2B02B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C723C9E-FD7C-45FC-A9B8-8F2E80D2B02B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,5 +86,6 @@ Global
 		{6AE1AA10-B78B-43D2-89BF-DC5C86C228C0} = {812A3440-07EF-41BB-BDC5-F4EC52862A88}
 		{DAD37AC0-6844-4E02-9A9C-78A07C44F9F0} = {A76B7AD2-3A5A-433F-BE65-4AEB0DAC821D}
 		{5ECA8C86-DD62-4C7B-A938-937DB0CD5486} = {A76B7AD2-3A5A-433F-BE65-4AEB0DAC821D}
+		{8C723C9E-FD7C-45FC-A9B8-8F2E80D2B02B} = {812A3440-07EF-41BB-BDC5-F4EC52862A88}
 	EndGlobalSection
 EndGlobal
